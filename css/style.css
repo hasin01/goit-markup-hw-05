@@ -22,6 +22,7 @@
   --heading-title-color: #ffffff;
   --company-icon-color: #8e8f99;
   --footer-color-item: #31d0aa;
+  --backdor-color-backround:#FCFCFC;
 }
 
 /* Reset */
@@ -145,8 +146,21 @@ body {
   padding: 24px 0;
   font-weight: 500;
   color: var(--primary-text-color);
+  position: relative;
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-
+.current::after{
+content: "";
+position: absolute;
+background: #404BBF;
+border-radius: 2px;
+width: 100%;
+height: 4px;
+left: 0;
+bottom: 0;
+}
 .nav-link.current,
 .nav-link:hover,
 .nav-link:focus {
@@ -155,6 +169,9 @@ body {
 .address-link {
   font-style: normal;
   color: var(--address-text-color);
+  transition-property: color ;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .address-link:hover,
 .address-link:focus {
@@ -222,6 +239,9 @@ body {
   color: var(--logo-text-color);
   padding: 12px 24px 12px 24px;
   cursor: pointer;
+  transition-property: background-color, border , color, box-shadow,border-radius ;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btn:hover,
@@ -234,6 +254,9 @@ body {
   color: var(--heading-title-color);
 }
 .btn-studio {
+  transition-property: background-color, border, box-shadow,border-radius ;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   background: var(--logo-text-color);
   border: 1px solid var(--logo-text-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
@@ -306,6 +329,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition-property: background-color ;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  
 }
 .messenger-item {
   width: 40px;
@@ -340,8 +367,12 @@ body {
   align-items: center;
   justify-content: center;
   color: var(--company-icon-color);
+  
 }
 .icon-company {
+  transition-property: border-color ,fill ;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   fill: currentColor;
 }
 .company-link:is(:hover, :focus) {
@@ -363,7 +394,33 @@ body {
 .photo-item {
   margin-right: 24px;
   margin-bottom: 48px;
+  transition-property: box-shadow ;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  
 }
+.photo-item:hover .photo-wrap-item{
+  transform: translateY(0);
+}
+.photo-wrap{
+  position: relative;
+  overflow: hidden;
+
+}
+.photo-wrap-item{
+  position: absolute;
+  top: 0;
+  padding: 40px 32px 164px 32px;
+  height: 100%;
+  background-color: var(--logo-text-color);
+line-height: 1.5;
+color: var( --btn-background-color);
+transform: translateY(100%);
+transition-property: transform ;
+transition-duration: 250ms;
+transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .photo-item:nth-child(3n) {
   margin-right: 0;
 }
@@ -438,6 +495,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   
 }
 .messenger-footer-item {
@@ -452,4 +512,54 @@ body {
 }
 .messenger-footer-link:is(:hover, :focus) {
   background: var(--footer-color-item);
+}
+/* backdor */
+.backdor{
+  position: fixed;
+  top: 0;
+  background: rgba(46, 47, 66, 0.4);
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);;
+  
+}
+.backdor.is-hidden{
+  opacity: 0;
+  pointer-events: none;
+}
+.btn-modal{
+  display: block;
+  margin-left: auto;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  background: var(--btn-border-color);
+border: 1px solid rgba(0, 0, 0, 0.1);
+transition-property: bacround-color ,fill ;
+transition-duration: 250ms;
+transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+}
+.btn-modal:hover{
+  background-color: var( --text-hover-header);
+  fill: var(--btn-border-color);
+ 
+}
+.backdor.is-hidden .modal{
+  transform:translate(-50%, -50%) scale(0.9);
+}
+
+.modal{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  width: 408px;
+  height: 576px;;
+  padding: 24px;
+  background: var(--backdor-color-backround);
+box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
+border-radius: 4px;
+transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
