@@ -239,7 +239,7 @@ body {
   color: var(--logo-text-color);
   padding: 12px 24px 12px 24px;
   cursor: pointer;
-  transition-property: background-color, border, color, box-shadow,;
+  transition-property: background-color, border, color, box-shadow;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
