@@ -253,7 +253,8 @@ body {
   color: var(--heading-title-color);
 }
 .btn-studio {
-  transition-property: background-color,  box-shadow;
+  animation: both;
+  transition-property: background-color, box-shadow;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   background: var(--logo-text-color);
@@ -546,11 +547,188 @@ body {
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
   width: 408px;
-  height: 576px;
+  min-height: 584px;
   padding: 24px;
   background: var(--backdor-color-backround);
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+/*---------------------------------------- Input--------------------------------------------------/ */
+.modal-title {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: #2e2f42;
+  margin-top: 20px;
+  margin-bottom: 16px;
+  
+}
+.modal-form-input{
+  outline: transparent;
+}
+.modal-form-input:focus {
+  
+  border-color: var(--logo-text-color);
+
+}
+ 
+
+.modal-form-input:focus + .icon-form-modal{
+  fill: var(--logo-text-color);
+}
+.form-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 8px;
+}
+.form-field label {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 0.85;
+  letter-spacing: 0.01em;
+  color: #8e8f99;
+}
+.form-field input {
+  width: 100%;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  padding: 10px;
+  padding-left: 30px;
+}
+
+.textarea {
+  resize: none;
+  height: 120px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  margin-bottom: 10px;
+  
+  outline: transparent;
+}
+.textarea:focus{
+  border-color: var(--logo-text-color);
+}
+/* ----------------------------------check-text -----------------------------------*/
+.check-text {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 0.85;
+  letter-spacing: 0.04em;
+  color: var(--company-icon-color);
+  display: flex;
+  align-items: center;
+  
+}
+.modal-label{
+  margin-top: 8px;
+  margin-bottom: 4px;
+}
+.check-text span{
+  width: 16px;
+  height: 16px;
+  border: 1px solid var(--background-footer-color);
+  border-radius: 2px;
+  margin-right: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  fill: transparent;
+}
+.input-checkbox:checked + .check-text > span{
+  background-color: var(--text-hover-header);
+  fill: var(--btn-background-color);
+}
+.btn-modal-form {
+  margin-top: 24px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  background: var(--logo-text-color);
+  border-radius: 4px;
+  padding: 20px 66px;
+  letter-spacing: 0.04em;
+  color: var(--heading-title-color);
+  border-color: transparent;
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-modal-form:is(:hover, :focus) {
+  background: var(--text-hover-header);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
+
+.modal-link {
+  margin-left: 3px;
+  letter-spacing: 0.04em;
+  text-decoration-line: underline;
+  color: var(--logo-text-color);
+}
+
+.textarea::placeholder {
+  color: rgba(46, 47, 66, 0.4);
+}
+.modal-form-input-wrapper {
+  position: relative;
+}
+.icon-input {
+  position: absolute;
+  top: 50%;
+  left: 13px;
+  transform: translateY(-50%);
+}
+
+/* --------------------------------footer-form--------------------------------- */
+.footer-title-form{
+font-weight: 500;
+font-size: 16px;
+line-height: 24px;
+letter-spacing: 0.02em;
+color: var( --heading-title-color);
+margin-bottom: 16px;
+}
+.btn-footer-form{
+  background: var(--logo-text-color);
+border-radius: 4px;
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.04em;
+color: var( --heading-title-color);
+border: 1px solid var(--logo-text-color);
+padding:8px 24px ;
+
+}
+.btn-footer-form:is(:hover, :focus) {
+   background-color: var(--text-hover-header);
+   border-color: var(--text-hover-header);
+}
+.input-form-footer{
+  width: 264px;
+  margin-right: 16px;
+  background: transparent;
+  border: 1px solid var( --heading-title-color);
+filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+border-radius: 4px;
+outline: transparent;
+padding: 8px 0 8px 16px;
+color: var(--heading-title-color);
+}
+.input-form-footer:focus{
+  border: 1px solid var(--logo-text-color);
+}
+.icon-footer-form{
+  margin-left: 16px;
+}
+.form-footer{
+  display: flex;
+  flex-direction: column;
+  margin-left: 80px;
+}
+.group-input{
+  display: flex;
 }
